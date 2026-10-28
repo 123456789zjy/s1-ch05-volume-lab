@@ -1,106 +1,17 @@
-<!doctype html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="S1 5.3 稜柱體積互動學習程式：由單位立方體建立公式，辨識底面積與柱高，處理正向、逆向及體積守恆問題。">
-  <title>S1 5.3 Volume Lab｜稜柱體積工場</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="https://123456789zjy.github.io/math-learning-hub/"><span class="brand-mark"><i></i><i></i><i></i></span><span><b>Math Learning Hub</b><small>返回課程導航</small></span></a>
-    <div class="module"><small>S1 · CH05</small><b>5.3 VOLUME OF PRISMS</b></div>
-    <span class="badge">中 / EN</span>
-  </header>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="S1 5.3 稜柱體積教師課堂演示：單位立方體、V=Bh、兩種高度、例題及體積守恆。"><title>S1 5.3｜稜柱體積課堂演示台</title><link rel="stylesheet" href="styles.css"></head><body>
+<header class="topbar"><a href="https://123456789zjy.github.io/math-learning-hub/"><b>Math Learning Hub</b><small>返回課程導航</small></a><div>S1 · CH05　<b>5.3 VOLUME OF PRISMS</b></div><span>TEACHER DEMO</span></header>
+<main><section class="hero"><div><p>CLASSROOM VISUALISER</p><h1>稜柱體積演示台 <small>Volume of Prisms</small></h1><p>從「每層多少」和「共有多少層」歸納公式，再用可旋轉模型處理最容易混淆的兩種高度。</p></div><aside><b>本節物件</b><p>理解而非背誦 V = B × h，並以體積守恆解釋倒模與排水情境。</p></aside></section>
+<nav class="nav"><button class="active" data-p="engage">01 Engage<small>重溫立方體</small></button><button data-p="derive">02 Explore<small>堆疊並歸納</small></button><button data-p="height">03 Explain<small>辨別兩種高度</small></button><button data-p="example">04 Elaborate<small>例題逐步揭示</small></button><button data-p="apply">05 Apply<small>體積守恆</small></button><button data-p="practice">06 Practice<small>獨立練習</small></button></nav>
 
-  <main>
-    <section class="hero">
-      <div><p class="eyebrow">INTERACTIVE MEASUREMENT LAB</p><h1>稜柱體積工場 <span>Volume Lab</span></h1><p>由「一層有多少」到「共有多少層」，建立體積公式，再把同一結構用於不同底面及生活情境。</p></div>
-      <aside><span>學習目標</span><p>辨認底面積及柱高，運用 <b>V = Bh</b> 解正向、逆向及體積守恆問題。</p></aside>
-    </section>
+<section class="panel active" id="p-engage"><div class="head"><div><span>ENGAGE · NOTES 5.3</span><h2>長方體的體積，為甚麼是長 × 闊 × 高？</h2><p>先不用公式。讓學生數一層有多少粒，再數共有多少層。</p></div><div class="question"><b>教師提問</b>如果看不到後面的立方體，還需要逐粒數嗎？</div></div><div class="grid"><div class="model"><svg id="cube-stage" viewBox="0 0 760 480"></svg><p>拖曳旋轉 · 滑桿改變層數</p><label>顯示層數 <input id="layer-slider" type="range" min="1" max="5" value="2"></label></div><aside class="board"><div>每層：<strong id="per-layer">12</strong> 粒</div><div>層數：<strong id="layers">2</strong></div><div class="answer">總數：<strong id="cube-total">24</strong> 粒</div><button data-reveal="cube-link">連結舊知識</button><p class="hidden reveal" id="cube-link">12 × 2 = 24；數立方體就是求體積。</p></aside></div></section>
 
-    <nav class="step-nav" aria-label="學習步驟">
-      <button class="step active" data-step="build"><span>01</span><b>堆疊</b><small>Build</small></button>
-      <button class="step" data-step="discern"><span>02</span><b>分辨</b><small>Base or height?</small></button>
-      <button class="step" data-step="calculate"><span>03</span><b>計算</b><small>Three bases</small></button>
-      <button class="step" data-step="inverse"><span>04</span><b>逆向</b><small>Missing length</small></button>
-      <button class="step" data-step="apply"><span>05</span><b>應用</b><small>Conservation</small></button>
-      <button class="step" data-step="check"><span>06</span><b>檢測</b><small>Exit ticket</small></button>
-    </nav>
+<section class="panel" id="p-derive"><div class="head"><div><span>EXPLORE · NOTES TABLE</span><h2>保持每層相同，改變底面積或層數</h2><p>這不是做題；教師調整數值，全班共同完成 notes 的表格並找規律。</p></div><button data-reveal="formula">揭示公式</button></div><div class="grid"><div class="model"><svg id="derive-stage" viewBox="0 0 760 480"></svg><p>模型可拖曳旋轉</p><div class="sliders"><label>底面長 <input id="rows" type="range" min="1" max="5" value="3"></label><label>底面闊 <input id="cols" type="range" min="1" max="4" value="2"></label><label>柱高／層數 <input id="height-layers" type="range" min="1" max="5" value="4"></label></div></div><aside class="board"><table><tr><th>底面積 B</th><td id="B">6</td></tr><tr><th>柱高 h</th><td id="H">4</td></tr><tr><th>體積 V</th><td id="V">24</td></tr></table><div class="hidden formula" id="formula"><b>共同規律</b><strong>V = B × h</strong><p>單位：cm³、m³……</p></div></aside></div></section>
 
-    <div class="workspace">
-      <section class="panel active" id="step-build">
-        <div class="copy-card">
-          <span class="stage">EXPLORE · 探索</span>
-          <h2>一層有多少粒？共有多少層？</h2>
-          <p>先用單位立方體數出底層，再增加層數。比較「粒數」、「底面積」和「柱高」。</p>
-          <label>每層單位立方體 <output id="base-output">6</output><input id="base-slider" type="range" min="1" max="9" value="6"></label>
-          <label>層數／柱高 <output id="layer-output">3</output><input id="layer-slider" type="range" min="1" max="6" value="3"></label>
-          <div class="question"><b>不逐粒數，可以怎樣知道總數？</b><span id="build-prompt">每層 6 粒，共 3 層。</span></div>
-        </div>
-        <div class="interactive-card build-card">
-          <svg id="cube-stack" viewBox="0 0 680 420" aria-label="單位立方體堆疊"></svg>
-          <div class="equation-strip"><span>體積</span><strong id="cube-count">18</strong><em>=</em><span>底面積 <b id="eq-base">6</b></span><em>×</em><span>柱高 <b id="eq-height">3</b></span></div>
-        </div>
-      </section>
+<section class="panel" id="p-height"><div class="head"><div><span>EXPLAIN · CRITICAL CONTRAST</span><h2>三角形的高 ≠ 稜柱的高</h2><p>兩條線同時保留在模型上；旋轉後仍跟隨正確幾何位置。</p></div><div class="question"><b>先問</b>公式 `V = B × h` 的 h 是哪一條？</div></div><div class="grid"><div class="model"><svg id="tri-stage" viewBox="0 0 760 480"></svg><p>拖曳旋轉，觀察兩條高度</p><div class="buttons"><button id="toggle-tri-h">三角形的高</button><button id="toggle-prism-h">稜柱的高</button><button id="rotate-tri">自動旋轉</button></div></div><aside class="board"><div class="legend"><span><i class="red"></i>5 cm：用來求底面積 B</span><span><i class="purple"></i>7 cm：兩底面距離，即公式中的 h</span></div><div class="warning"><b>常見錯誤</b><p>把三角形的高 5 cm 當成柱高；或看見模型轉向後改選畫面上「直立」的線。</p></div></aside></div></section>
 
-      <section class="panel" id="step-discern">
-        <div class="section-head"><div><span class="stage">CONTRAST · 對比</span><h2>兩個「高」作用不同</h2></div><p>保持圖形不變，只改變提問：哪一個高用來求底面積？哪一個高用來求稜柱體積？</p></div>
-        <div class="discern-grid">
-          <div class="interactive-card prism-diagram">
-            <svg viewBox="0 0 700 420" aria-label="標有兩個高度的三角柱">
-              <polygon points="90,315 205,80 330,315" class="base-face"></polygon><polygon points="390,340 500,115 620,340" class="back-face"></polygon>
-              <g class="edges"><line x1="90" y1="315" x2="390" y2="340"/><line x1="205" y1="80" x2="500" y2="115"/><line x1="330" y1="315" x2="620" y2="340"/></g>
-              <line x1="205" y1="80" x2="205" y2="315" class="measure triangle-h"/><text x="220" y="205">5 cm</text>
-              <line x1="285" y1="205" x2="545" y2="230" class="measure prism-h"/><text x="400" y="205">7 cm</text>
-              <text x="115" y="350">底邊 8 cm</text>
-            </svg>
-            <div class="choice-block"><p id="discern-question">求三角形底面積，應使用哪一個高？</p><button data-measure="5">5 cm</button><button data-measure="7">7 cm</button></div>
-            <div class="feedback" id="discern-feedback">先看題目要計算「面」還是「體」。</div>
-          </div>
-          <aside class="concept-card"><span>CRITICAL ASPECT</span><h3>先標示 B 和 h</h3><dl><div><dt>5 cm</dt><dd>三角形的高，用於 (B=\frac12 bh)</dd></div><div><dt>7 cm</dt><dd>兩底面之間的距離，用於 (V=Bh)</dd></div></dl><button id="next-discern">下一問 →</button></aside>
-        </div>
-      </section>
+<section class="panel" id="p-example"><div class="head"><div><span>ELABORATE · NOTES EXAMPLE</span><h2>例題：三角柱體積</h2><p>底面三角形底 8 cm、高 5 cm；稜柱高 7 cm。每次只揭示一步。</p></div><button id="next-step">顯示下一步</button></div><div class="grid"><div class="model"><svg id="example-stage" viewBox="0 0 760 480"></svg><p>拖曳旋轉，標記不會錯位</p></div><aside class="board"><ol id="worked-steps"><li class="shown">先圈出一個底面</li><li>底面積 B = ½ × 8 × 5 = 20 cm²</li><li>稜柱高 h = 7 cm</li><li>V = B × h = 20 × 7 = 140 cm³</li></ol><div class="variation"><b>選題理由</b><p>同一幅圖同時出現 5 cm 和 7 cm，專門分離「底面高」與「柱高」；其餘運算保持簡單。</p></div></aside></div></section>
 
-      <section class="panel" id="step-calculate">
-        <div class="section-head"><div><span class="stage">GENERALISE · 歸納</span><h2>底面改變，結構不變</h2></div><p>先求底面積 (B)，再乘柱高 (h)。每題只改變底面的形狀。</p></div>
-        <div class="type-tabs" id="volume-tabs"><button class="active" data-type="rect">長方柱</button><button data-type="triangle">三角柱</button><button data-type="trapezium">梯形柱</button></div>
-        <div class="calculate-layout">
-          <div class="interactive-card calc-visual"><svg id="calc-svg" viewBox="0 0 660 400"></svg></div>
-          <div class="solution-card">
-            <span id="calc-title">例 1 · 長方柱</span>
-            <h3 id="calc-task">求體積</h3>
-            <div class="formula-steps" id="calc-steps"></div>
-            <label class="answer-line">答案 <input id="calc-answer" inputmode="decimal"> <b>cm³</b></label>
-            <button id="check-calc">檢查答案</button><p class="feedback" id="calc-feedback">所有長度均以 cm 為單位。</p>
-          </div>
-        </div>
-      </section>
+<section class="panel" id="p-apply"><div class="head"><div><span>APPLY · NOTES CONTEXT</span><h2>形狀改變，體積可以保持不變</h2><p>拖動轉移滑桿，示範巧克力倒模和水位上升。</p></div></div><div class="applications"><article><h3>巧克力倒模</h3><div class="transfer"><div class="bar" id="bar"></div><span>→</span><div class="star" id="star"></div></div><label>已轉移 <input id="melt" type="range" min="0" max="100" value="0"></label><p>原體積 30 cm³；星形底面積 10 cm²，所以新柱高 = <b>3 cm</b>。</p></article><article><h3>排水法</h3><div class="tank"><div class="water" id="water"></div><div class="marble"></div></div><label>放入波子數 <input id="marbles" type="range" min="0" max="200" value="0"></label><p id="water-text">水位上升 0.0 cm；排開水的體積等於波子總體積。</p></article></div></section>
 
-      <section class="panel" id="step-inverse">
-        <div class="section-head"><div><span class="stage">REVERSE · 逆向</span><h2>已知體積，建立方程</h2></div><p>不是把數字隨意相除：先寫 (V=B\times h)，再代入已知量。</p></div>
-        <div class="inverse-grid" id="inverse-grid"></div>
-      </section>
-
-      <section class="panel" id="step-apply">
-        <div class="section-head"><div><span class="stage">TRANSFER · 遷移</span><h2>形狀改變，體積守恆</h2></div><p>熔化重鑄或排水時，關鍵不是外形，而是轉移前後的體積相等。</p></div>
-        <div class="application-grid">
-          <article class="application-card"><span>情境 A · 熔化重鑄</span><h3>長方體朱古力 → 星形柱</h3><div class="mini-equation">5 × 3 × 2 = <b>30 cm³</b></div><p>星形底面積為 10 cm²，新柱高是多少？</p><label><input data-app-answer="3" inputmode="decimal"> cm</label><button class="check-app">檢查</button><div class="feedback">原體積 = 新體積。</div></article>
-          <article class="application-card"><span>情境 B · 排水</span><h3>200 粒相同波子</h3><div class="tank"><i></i><b>30 cm × 10 cm</b><em>水位上升 2 cm</em></div><p>每粒波子的體積是多少？</p><label><input data-app-answer="3" inputmode="decimal"> cm³</label><button class="check-app">檢查</button><div class="feedback">水量增加 = 全部波子的體積。</div></article>
-        </div>
-      </section>
-
-      <section class="panel" id="step-check">
-        <div class="section-head"><div><span class="stage">EVALUATE · 檢測</span><h2>五題離堂挑戰</h2></div><p>涵蓋公式、辨識兩個高度、不同底面、逆向方程及體積守恆。</p></div>
-        <form id="exit-quiz" class="quiz"></form>
-        <div id="quiz-result" class="result hidden"></div>
-      </section>
-    </div>
-
-    <section class="key-idea"><span>KEY IDEA</span><p><b>稜柱體積：</b>(V=B\times h)。(B) 是底面積，(h) 是兩個全等平行底面之間的距離；答案使用立方單位。</p></section>
-  </main>
-  <footer><span>S1 5.3 Volume Lab</span><a href="https://123456789zjy.github.io/math-learning-hub/">返回 Math Learning Hub ↑</a></footer>
-  <script src="app.js"></script>
-</body>
-</html>
+<section class="panel" id="p-practice"><div class="head"><div><span>INDEPENDENT PRACTICE</span><h2>獨立練習區</h2><p>課堂講解完成後才使用。</p></div></div><form id="quiz" class="quiz"></form><div id="result" class="result hidden"></div></section></main>
+<footer><span>S1 5.3 · Teacher Demonstration</span><a href="https://123456789zjy.github.io/math-learning-hub/">返回 Math Learning Hub ↑</a></footer><script src="app.js"></script></body></html>
